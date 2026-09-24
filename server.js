@@ -1,30 +1,24 @@
-/*
-import { createServer}  from "node:http"
-
-const server = createServer((request, response) => {
-    response.write("oi");
-
-    return response.end()
-})
-
-server.listen(3333)
-*/
+import { databaseMemory } from "./db-memory";
 
 //Criando servidor com fastify
 import fastify from "fastify";
 
 const server = fastify()
 
-server.get('/', () => {
+server.post('/videos', () => {
     return "Hello world"
 })
 
-server.get('/Contact', () => {
+server.get('/videos', () => {
     return "Hello world"
 })
 
-server.get('/About', () => {
+server.put('/videos/:id', () => {
     return "Hello world"
+})
+
+server.delete('/videos/:id', () => {
+    return "Hello World"
 })
 
 
